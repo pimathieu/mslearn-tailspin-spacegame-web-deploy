@@ -12,3 +12,29 @@ provided by the bot. You will only need to do this once across all repos using o
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+
+
+Create App Service instances, one for each environment (Dev, Test, Staging, and Production)
+az webapp create \
+  --name tailspin-space-game-web-dev-$webappsuffix \
+  --resource-group tailspin-space-game-rg \
+  --plan tailspin-space-game-asp \
+  --runtime "DOTNET|5.0"
+
+az webapp create \
+  --name tailspin-space-game-web-test-$webappsuffix \
+  --resource-group tailspin-space-game-rg \
+  --plan tailspin-space-game-asp \
+  --runtime "DOTNET|5.0"
+
+az webapp create \
+  --name tailspin-space-game-web-staging-$webappsuffix \
+  --resource-group tailspin-space-game-rg \
+  --plan tailspin-space-game-asp \
+  --runtime "DOTNET|5.0"
+
+az webapp create \
+  --name tailspin-space-game-web-production-$webappsuffix \
+  --resource-group tailspin-space-game-rg \
+  --plan tailspin-space-game-asp \
+  --runtime "DOTNET|5.0"
